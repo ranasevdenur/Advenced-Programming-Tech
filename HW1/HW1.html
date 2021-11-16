@@ -1,8 +1,59 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Poisson Probabilities</title>
+
+  <style>
+    body { max-width: 440px; }
+    pre  { overflow-x: auto; }
+    img  { max-width: 100%; }
+    #out {
+        font-size: larger;
+        line-height: 1.4;
+        color: blue;
+    }
+  </style>
+</head>
+
 <body>
-<h2 id="title">çarpım tablosu oluşturma ----->homework1 </h2>
-    <script type="text/javascript">
+
+<h2>Poisson Probabilities</h2>
+
+<hr />
+<b>Sample code</b>
+<pre id="sample">function poisson(x, λ, f=4) {
+    <br>    
+    "document.write("<table border='3'><tr>");"
+    <br>    
+    "for (var x = 1; x <= 10; x++) {
+    <br>    
+    "document.write("<td>");"
+    <br>
+    "   for (var i = 1; i <= 10; i++) {
+    <br>
+    "       document.write(x+" x " + i + " = " + x * i + "<br/>");"
+    <br>    
+    "   }"
+    <br>    
+    "   if(x==5){""
+    <br>    
+    "   document.write("</tr><tr>");}" 
+    <br>       
+    "   document.write("</td>");}"
+    <br>       
+    "document.write("</tr><table>");"
+    </pre>
+
+<hr />
+<b>Original table</b>
+<p>
+    <img src="carpimtablosu.jpg">
+    Ref: <a href="https://www.yazilimkodlama.com/javascript/javascript-carpim-tablosu-olusturma-ornegi/">Poisson Table</a>
+</p>
+
+<script type="text/javascript">
         document.write("<table border='3'><tr>");
         for (var x = 1; x <= 10; x++) {        
         document.write("<td>");
@@ -16,8 +67,7 @@
             document.write("</td>");
         }    
         document.write("</tr><table>");
-    </script>
-</head>
-<body>
+</script>
+
 </body>
 </html>
