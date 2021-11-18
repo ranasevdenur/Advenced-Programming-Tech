@@ -27,45 +27,8 @@
 <pre id="out"></pre>
 <hr />
 <b>Sample code</b>
-<pre id="sample">
-"str= inp.value"
-<br>
-"[d0, ...data] = str.split('\n')"
-<br>
-"d0"
-<br>
-"data"
-<br>
-"function toObject(x)"
-<br>
-"{let b = {}
-<br>
-"for (let[i,s] of x.split('\t').entries())"
-<br>
-"   b[keys[i]] = (isNan(s)? s : Number(s))"
-<br>
-"return b}"
-<br>
-"a = data.map(toObject)"
-<br>
-"keys = d0.split('\t')"
-<br>
-"a = data.map(toObject)"
-<br>
-"inp"
-<br>
-"x=a[1]"
-<br>
-"a.filter(x => x.height>171)"
-<br>
-"a.map(x => x.age)"
-<br>
-"a.find(x => x.age==27)"
-<br>
-"a.forEach(x => console.console.log(x.name,x.sex))"
-<br>
-"a.findIndex(x => x.name=="jhon")"
-</pre>
+<pre id=sample>This text is not shown. Why?</pre>
+
 <hr />
 
 <script>
@@ -111,6 +74,10 @@ Mont Blanc	4808	Italy/France`
     sample.innerText = toList
     inp.value = MOUNT
     //toList()  //array of objects
+    
+    title.innerText = document.title;
+    sample.innerText = init+'\n'+check;
+    init();
 </script>
 <script src="/2021/navbar.js"></script>
 </body>
