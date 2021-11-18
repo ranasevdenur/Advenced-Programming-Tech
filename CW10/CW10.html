@@ -16,20 +16,10 @@
 
 <body>   <!-- HTML comment: Modify all items marked xxx -->
 
-<h2 id="title">Rana Kazan</h2>
-<p title="navigator.platform">
-  Platform: <span id=plat></span>
-</p>
-<p title="Battery level (integer)">
-  Battery level: <span id=lev></span>
-</p>
-<p title="Latitude/Longitude (4 digits)">
-  Location: <span id=loc></span>
-</p>
-<p title="Does the URL exist?">
-  URL <input type=url id=url value="https://ranasevdenur.github.io/"
-      onChange="check()"> <span id=resp></span>
-</p>
+<h2 id=title title="CW10 Event Listener">CW10 Event Listener</h2>
+<h2 id=title1 title1="Battery Status">Battery Status</h2>
+<h2 id=title2 title2="Online Status">Online Status</h2>
+<h2 id=title3 title3="Keyboard">Keyboard</h2>
 <hr />
 <b>Sample code</b>
 <pre id=sample>This text is not shown. Why?</pre>
@@ -38,35 +28,27 @@
 
 <script>
 "use strict";
+var batteryManager;
 function init() {
 //complete the code below
-    plat.innerText = navigator.userAgentData.platform;
-    navigator.geolocation.getCurrentPosition(k =>
-        loc.innerText = (k.coords.latitude.toFixed(4)+ "-"+ k.coords.longitude.toFixed(4))
-      );
-    navigator.getBattery().then(s =>
-        lev.innerText = "%"+ s.level*100
-      );
-    check()
-    window.onoffline = L = console.log
-    window.ononline = L
-    window.ononline = e => console.log(e.type)
-    window.onoffline = e => console.log(e.type)
-    window.onkeyup = e => console.log(e.key)
-    navigator.getBattery.onlevelchange = e => L(k.level,k.charging)
-    navigator.getBattery.onchargingchange = e => L(k.level,k.charging)
-    
-}
-function check() {
-//complete the code below
-    fetch(url.value).then(r => 
-      resp.innerText = r.ok? 'OK' : 'ERROR'
-    ).catch(e => 
-      resp.innerText = e
+    navigator.getBattery().then(
+      b =>lev.innerText = ('%' + b.level*100)
     )
+    navigator.getBattery().then(
+      b =>(batstatus.innerText = b.charging?'Charging..':'Discharging..')
+    )
+    navigator.getBattery().then(e => e.onchargingchange = b =>(lev.innerText = batteryLevel = e.level*100))
+    
+    onlinestatus.innerText = window.navigator.onLine?"Connected--online":"Disconnected--offline"
+    window.onoffline = e =>onlinestatus.innerText = "Disconnected--offline"
+    window.ononline = e =>onlinestatus.innerText="Connected--online"
+
+    window.onkeyup = e =>(keybordresult.innerText=("Pressed: "+ e.key))
+
 }
+
     title.innerText = document.title;
-    sample.innerText = init+'\n'+check;
+    sample.innerText = init+'\n';
     init();
 </script>
 
