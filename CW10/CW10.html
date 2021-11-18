@@ -19,7 +19,7 @@
 <h2 id=title title="CW10 Event Listener">CW10 Event Listener</h2>
 <h2 id=title1 title1="Battery Status">Battery Status</h2>
 <h2 id=title2 title2="Online Status">Online Status</h2>
-<h2 id=title3 title3="Keyboard">Keyboard</h2>
+<h2 id=title3 title3="Keyboard">keyboardresult</h2>
 <hr />
 <b>Sample code</b>
 <pre id=sample>This text is not shown. Why?</pre>
@@ -43,7 +43,7 @@ function init() {
     window.onoffline = e =>onlinestatus.innerText = "Disconnected--offline"
     window.ononline = e =>onlinestatus.innerText="Connected--online"
 
-    window.onkeyup = e =>(keybordresult.innerText=("Pressed: "+ e.key))
+    window.onkeyup = e =>(keyboardresult.innerText=("Pressed: "+ e.key))
 
 }
 
