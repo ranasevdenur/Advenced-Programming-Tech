@@ -48,6 +48,14 @@ function init() {
         lev.innerText = "%"+ s.level*100
       );
     check()
+    window.onoffline = L = console.log
+    window.ononline = L
+    window.ononline = e => console.log(e.type)
+    window.onoffline = e => console.log(e.type)
+    window.onkeyup = e => console.log(e.key)
+    navigator.getBattery.onlevelchange = e => L(k.level,k.charging)
+    navigator.getBattery.onchargingchange = e => L(k.level,k.charging)
+    
 }
 function check() {
 //complete the code below
