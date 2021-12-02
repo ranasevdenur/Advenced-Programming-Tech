@@ -68,7 +68,7 @@ async function readUser() {
     //start with avatar
     out.innerHTML = `<img src="${u.avatar_url}">`
     //add name and location
-    let s = u.name
+    let s = u.name || u.login
     out.innerHTML += s+BR; 
     let l = u.location
     out.innerHTML += l+BR;
