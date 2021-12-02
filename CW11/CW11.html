@@ -66,10 +66,10 @@ async function readUser() {
     if (!u || !u.login) return
     out.style.color = ''
     //start with avatar
-    out.innerHTML = `<img src="${u.avatar_url}">`
+    out.innerHTML = `<img src="${u.avatar_url}">`+BR;
     //add name and location
     let s = u.name || u.login
-    out.innerHTML += BR+BR+s.fontcolor("black")+BR; 
+    out.innerHTML += BR+BR+s.fontcolor("gray")+BR; 
     let l = u.location
     out.innerHTML += l+BR;
     //add link to GitHub 
