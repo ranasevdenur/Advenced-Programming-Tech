@@ -64,12 +64,12 @@ async function readUser() {
     const BR = '<BR>'
     let u = await toJSON(URL+usr.value)
     if (!u || !u.login) return
-    out.style.color = ''
+    out.style.color = "black"
     //start with avatar
     out.innerHTML = `<img src="${u.avatar_url}">`+BR+BR+BR;
     //add name and location
     let s = u.name || u.login
-    out.innerHTML += BR+BR+s.fontcolor("gray")+BR; 
+    out.innerHTML += BR+BR+s.fontcolor("black")+BR; 
     let l = u.location
     out.innerHTML += l+BR;
     //add link to GitHub 
