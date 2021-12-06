@@ -1,85 +1,114 @@
-<!DOCTYPE html>
+
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="../images/icon192.png">
-    <title>JS Animation</title>
+    <title>Animation </title>
 
   <style>
-    body { max-width: 500px; }
-    #sample { overflow-x: auto; }
-    button {
-      user-select: none;
-      cursor: pointer;
-    }
-    #box {
-      font-size: 180px;
-      background: #cfc;
-      width: 300px;
-      height: 240px;
-      position: relative;
-    }
-    #iii, #dot {
-      user-select: none;
-      position: absolute;
-      left: 130px;
-    }
-    #iii {
-      color: blue;
-    }
-    #dot {
-      background: rgba(0, 0, 0, 0);
-      color: #da0;
-      top: -105px;
-    }
-    #out {
-      height: 35px;
-    }
+
+body {
+  background: url("snow.gif");
+  
+}
+.animation{
+  width : 100%;
+  padding : 20px;
+  box-sizing : border-box;
+  margin: 5px auto;
+  
+  }
+
+ 
+.bulut{
+
+transform :translate(100px,10px);
+
+}
+.bulut:nth-child(2){
+
+transform :translate(500px,-200px);
+
+
+}
+.bulut:nth-child(3){
+
+transform :translate(1000px,-400px);
+
+}
+
+.snowman{
+transform :translate(500px,-500px);
+
+
+}
+
+	
   </style>
 </head>
-
 <body>
 
-<h2 id=title></h2>
+<div class = "animation">
 
-<div id=box onClick="box.animate(t2, 5000)">
-  <span id=iii>ı</span>
-  <span id=dot>.</span>
-</div>
+   <div class="buyukBulut"> 
+   <div class="bulut"> <img src = "cloud.png" id = "bulut"></div>
+   <div class="bulut"> <img src = "cloud.png" id = "bulut"></div>
+   <div class="bulut"> <img src = "cloud.png" id = "bulut"></div>
+   </div>
 
-<p id=but><button onClick="this.animate(t1, 5000)">translate</button>
-<button onClick="dot .animate(t2, 5000)">rotate</button>
-<button onClick="box .animate(t3, 6000)">background</button>
-<button onClick="out .animate(t4, 6000)">fontSize</button>
-</p>
 
-<p id=out>Animations in JS are simple and powerful</p>
-
-<hr />
-<b>Sample code</b>
-<pre id=sample></pre>
-
-<hr />
-<p>Ref: <a href="https://webkit.org/blog/8343/web-animations-in-webkit/" 
-   target="NewTab">Web Animations in WebKit</a>
-</p>
-
+	<div class="snowman"> 
+   <div class="snowman"> <img src = "olaf.png" id = "snowman"></div>
+   </div>
+   
+ </div> 
 <script>
-"use strict";
-title.innerText = document.title;
-let
-  r0 = "rotate(0)", x0 = "translateX(0)",
-  t1 = { transform: [x0, "translateX(290px)", x0] },
-  t2 = { transform: [r0, "rotate(90deg)", r0, "rotate(-90deg)", r0] },
-  t3 = { background: ["yellow", "cyan", "magenta", "yellow"] },
-  t4 = { fontSize: ["100%", "140%", "100%", "80%", "100%"] },
-  a = [t1, t2, t3, t4];
-sample.innerText = but.innerHTML
-  +'\nt3 = '+JSON.stringify(t3)
-  +'\nt4 = '+JSON.stringify(t4)
-</script>
-<script src="../navbar.js"></script>
 
-</body>
+window.onload = function() { 
+
+let i;
+for(i=0;i<3;i++){
+ 
+	    document.getElementsByClassName("buyukBulut")[0].animate([
+        // keyframes
+		
+        { transform: 'scale(1.05,1.05)' },
+		{ transform: 'scale(1,1)' },
+		{ transform: 'scale(1.05,1.05)' },
+	
+        
+		
+        ], { 
+        // timing options
+		
+        duration: 3000,
+        iterations: Infinity,
+	
+    })
+	
+	 document.getElementsByClassName("snowman")[0].animate([
+        // keyframes
+		{transform:'rotate(40deg)'},
+		{ transform: 'rotate(-40deg)' },
+		{ transform: 'rotate(40deg)' },
+	
+       		
+        ], { 
+        // timing options
+		
+        duration: 3000,
+        iterations: Infinity,
+	
+    })
+	
+	
+	}
+
+
+};
+
+
+
+</script>
+ </body>
 </html>
