@@ -69,13 +69,13 @@ async function readUser() {
     out.innerHTML = `<img src="${u.avatar_url}">`+BR+BR+BR;
     //add name and location
     let s = u.name || u.login
-    out.innerHTML += BR+BR+`<img src="personIcon.png" style="width:200px;height: 200px" >`+s.fontcolor("black")+BR; 
+    out.innerHTML += BR+BR+`<img src="personIcon.png" style="width:10px;height: 10px" >`+s.fontcolor("black")+BR; 
     let l = u.location
-    out.innerHTML += `<img src="location.png" style="width:200px;height: 200px" >`+l+BR;
+    out.innerHTML += `<img src="location.png" style="width:10px;height: 10px" >`+l+BR;
     //add link to GitHub 
     let h = "github.com/"+u.login
     out.innerHTML += 
-    `<img src="link.jpg" style="width:200px;height: 200px" >`+`<a href="https://${h}" target=NewTab>${h}</a>`
+    `<img src="link.jpg" style="width:10px;height: 10px" >`+`<a href="https://${h}" target=NewTab>${h}</a>`
     //add repo count and repo names
     let n = u.public_repos
     out.innerHTML += BR+`${n} public repos`+BR+BR
