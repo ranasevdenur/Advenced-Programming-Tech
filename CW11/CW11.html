@@ -69,7 +69,7 @@ async function readUser() {
     out.innerHTML = `<img src="${u.avatar_url}">`+BR+BR+BR;
     //add name and location
     let s = u.name || u.login
-    out.innerHTML += BR+BR+`<img src="personIcon.png" style="width:10px;height: 10px" >`+s.fontcolor("black")+BR; 
+    out.innerHTML += BR+BR+`<img src="personIcon.png" style="width:15px;height: 15px" >`+s.fontcolor("black")+BR; 
     let l = u.location
     out.innerHTML += `<img src="location.png" style="width:10px;height: 10px" >`+l+BR;
     //add link to GitHub 
