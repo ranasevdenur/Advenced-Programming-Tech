@@ -16,9 +16,9 @@ function perc() {
       document.getElementById("output").innerHTML=value;
 }
 
-function fordisplay(value) {
+function fordisplay(myvalue) {
       removeZero()
-      document.getElementById("output").innerHTML+=value;
+      document.getElementById("output").innerHTML+=myvalue;
 }
 function solve() {
      removeZero()
