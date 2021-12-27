@@ -24,5 +24,5 @@ function solve() {
      removeZero()
      var equation = document.getElementById('output').innerHTML;
      var solved = eval(equation);
-     document.getElementById('output').innerHTML=solved;
+     document.getElementById("output").innerHTML=solved;
 }
