@@ -4,39 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="Calculater.css">
-    <script src="Calculater.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
     <title>Programlayıcı Hesap Makinesi</title>
 </head>
 
 <body>
     <div >
         <h1>Programlayıcı Hesap Makinesi</h1>
-        <div>
-            <div id="hesapMakinesi">
-  <div id="ekran">
-    <input type="text" id="sonuc">
-  </div>
-  <div id="sayilar">
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>+</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>-</button>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>/</button>
-    <button>0</button>
-    <button>.</button>
-    <button>=</button>
-    <button>*</button>
-  </div>
-</div>
+        <div class="display">   </div>
+        <<p id="output">0</p>
+        <div class="first-row">
+            <button id="r1-1">C</button>
+            <button id="r1-3">%</button>
+            <button id="r1-4">/</button>
+        </div>
+        <div class="second-row">
+            <button id="r2-1" >7</button>
+            <button id="r2-2" >8</button>
+            <button id="r2-3" >9</button>
+            <button id="r2-4" >X</button>
+        </div>
+        <div class="third-row">
+            <button id="r3-1" >4</button>
+            <button id="r3-2" >5</button>
+            <button id="r3-3" >6</button>
+            <button id="r3-4" >-</button>
+        </div>
+        <div class="fourth-row">
+        <button id="r4-1"  >1</button>
+        <button id="r4-2"  >2</button>
+        <button id="r4-3"  >3</button>
+        <button id="r4-4"  >+</button>
+        </div>
 <style>
   #hesapMakinesi {
     margin: 0 auto;
@@ -78,29 +77,6 @@
 </style>
 
 <script>
-"use strict";
-  var _sayilar = document.getElementsByTagName("button"),
-    _sayiUzunluk = _sayilar.length,
-    i = 0,
-    _sonuc = document.getElementById("sonuc");
 
-  for (i = 0; i < _sayiUzunluk; i++) {
-    _sayilar[i].onclick = hesapla;
-  }
-
-  function hesapla() {
-    var _deger = this.innerHTML;
-
-    if (_deger == "=") {
-      try {
-        _sonuc.value = eval(_sonuc.value);
-      } catch (e) {
-        _sonuc.value = "0";
-      }
-      return;
-    }
-
-    _sonuc.value += _deger;
-  }
 </script>
 </html>
