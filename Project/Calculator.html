@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programlayıcı Hesap Makinesi</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Hesap Makinesi</title>
+    <link rel="stylesheet" href="Calculator.css">
 </head>
 
 <body>
@@ -14,8 +14,8 @@
         <<p id="output">10</p>
         <div class="first-row">
             <button id="r1-1" style="width: 138px;" onclick="forclear()">C</button>
-            <button id="r1-3" onclick="perc()"> % </button>
-            <button id="r1-4">/</button>
+            <button id="r1-3" onclick="perc()">%</button>
+            <button id="r1-4" value="/" onclick="fordisplay('/') ">/</button>
         </div>
         <div class="second-row">
             <button id="r2-1" value="7" onclick="fordisplay('7') ">7</button>
@@ -40,47 +40,6 @@
             <button id="r5-2"  value="." onclick="fordisplay('.') ">.</button>
             <button id="r5-3"  value="=" onclick="solve()" >=</button>
         </div>
-<style>
-  #hesapMakinesi {
-    margin: 0 auto;
-    width: 350px;
-    height: auto;
-    background-color: slategray;
-    border-radius: 5px;
-    padding: 10px;
-  }
 
-  #ekran {
-    padding: 10px 0px 10px 0px;
-    text-align: center;
-  }
 
-  #sonuc {
-    padding: 10px;
-    width: 90%;
-    border: none;
-    border-radius: 5px;
-    text-align: right;
-    font-size: 50px;
-    word-wrap: break-word;
-  }
-
-  #sayilar {
-    text-align: center;
-  }
-
-  button {
-    width: 70px;
-    height: 50px;
-    margin: 4px;
-    border-radius: 5px;
-    background-color: whitesmoke;
-    border: none;
-    outline: none;
-  }
-</style>
-
-<script>
-
-</script>
 </html>
