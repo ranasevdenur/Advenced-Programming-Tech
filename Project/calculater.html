@@ -1,42 +1,106 @@
-<!— wWw.Eniyisozler.Net Kod Başlangıcı —>
-<link rel="stylesheet" media="screen, print, handheld" type="text/css" href="https://www.eniyisozler.net/Html-Kodlari/hesapmakinasi-5.css">
-<form class="calc">
-    <p class="calc-display">
-      <input type="text" name="res" id="res" value="Eniyisozler" class="calc-display-input" onfocus="this.blur()">
-    </p>
-    <p class="calc-row">
-      <button type="button" class="calc-button calc-button-gray" onclick="s('Just....')">mrc</button>
-      <button type="button" class="calc-button calc-button-gray" onclick="s('....do..')">m-</button>
-      <button type="button" class="calc-button calc-button-gray" onclick="s('......it')">m+</button>
-      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('/')">÷</button>
-    </p>
-    <p class="calc-row">
-      <button type="button" class="calc-button" onclick="a('7')">7</button>
-      <button type="button" class="calc-button" onclick="a('8')">8</button>
-      <button type="button" class="calc-button" onclick="a('9')">9</button>
-      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('*')">x</button>
-    </p>
-    <p class="calc-row">
-      <button type="button" class="calc-button" onclick="a('4')">4</button>
-      <button type="button" class="calc-button" onclick="a('5')">5</button>
-      <button type="button" class="calc-button" onclick="a('6')">6</button>
-      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('-')">-</button>
-    </p>
-    <p class="calc-row">
-      <button type="button" class="calc-button" onclick="a('1')">1</button>
-      <button type="button" class="calc-button" onclick="a('2')">2</button>
-      <button type="button" class="calc-button" onclick="a('3')">3</button>
-      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('+')">+</button>
-    </p>
-    <p class="calc-row">
-      <button type="button" class="calc-button" onclick="a('0')">0</button>
-      <button type="button" class="calc-button" onclick="a('.')">.</button>
-      <button type="button" class="calc-button" onclick="s('')">C</button>
-      <button type="button" class="calc-button calc-button-yellow calc-button-big" onclick="e()">=</button>
-    </p>
-  </form>
-  <script>
-    function s(v) { document.getElementById('res').value = v }
-    function a(v) { document.getElementById('res').value += v }
-    function e() { try { s(eval(document.getElementById('res').value)) } catch(e) { s('Error') } }
-  </script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Calculater.css">
+    <script src="Calculater.js"></script>
+    <title>Programlayıcı Hesap Makinesi</title>
+</head>
+
+<body>
+    <div >
+        <h1>Programlayıcı Hesap Makinesi</h1>
+        <div>
+            <div id="hesapMakinesi">
+  <div id="ekran">
+    <input type="text" id="sonuc">
+  </div>
+  <div id="sayilar">
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>+</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>-</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>/</button>
+    <button>0</button>
+    <button>.</button>
+    <button>=</button>
+    <button>*</button>
+  </div>
+</div>
+<style>
+  #hesapMakinesi {
+    margin: 0 auto;
+    width: 350px;
+    height: auto;
+    background-color: slategray;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  #ekran {
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+  }
+
+  #sonuc {
+    padding: 10px;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    text-align: right;
+    font-size: 50px;
+    word-wrap: break-word;
+  }
+
+  #sayilar {
+    text-align: center;
+  }
+
+  button {
+    width: 70px;
+    height: 50px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+  }
+</style>
+
+<script>
+"use strict";
+  var _sayilar = document.getElementsByTagName("button"),
+    _sayiUzunluk = _sayilar.length,
+    i = 0,
+    _sonuc = document.getElementById("sonuc");
+
+  for (i = 0; i < _sayiUzunluk; i++) {
+    _sayilar[i].onclick = hesapla;
+  }
+
+  function hesapla() {
+    var _deger = this.innerHTML;
+
+    if (_deger == "=") {
+      try {
+        _sonuc.value = eval(_sonuc.value);
+      } catch (e) {
+        _sonuc.value = "0";
+      }
+      return;
+    }
+
+    _sonuc.value += _deger;
+  }
+</script>
+</html>
